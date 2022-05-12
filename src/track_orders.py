@@ -44,8 +44,14 @@ class TrackOrders:
                 customer_eat_out_days.add(order[2])
         return all_open_days.difference(customer_eat_out_days)
 
+    # requisito 2.6
     def get_busiest_day(self):
-        pass
+        days_list = []
+        for order in self.data:
+            days_list.append(order[2])
+        busiest_day = Counter(days_list).most_common(1)[0][0]
+        return busiest_day
 
+    # requisito 2.7
     def get_least_busy_day(self):
         pass
